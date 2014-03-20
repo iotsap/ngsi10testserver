@@ -1,0 +1,39 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.sap.research.fiware.ngsi10.test</groupId>
+		<artifactId>NGSI10ParentProject</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../NGSI10ParentProject</relativePath>
+	</parent>
+	<artifactId>TestClientToNGSI10TestServer</artifactId>
+	<packaging>jar</packaging>
+	<name>Test Client for NGSI10 Test Server</name>
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.sap.research.fiware.ngsi10.test</groupId>
+			<artifactId>NGSI910DatastructuresAndNGSI10Operations</artifactId>
+			<version>0.0.7</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>4.2.5</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.api.client</groupId>
+			<artifactId>google-api-client-escape</artifactId>
+			<version>1.2.3-alpha</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<finalName>${project.artifactId}</finalName>
+	</build>
+</project>

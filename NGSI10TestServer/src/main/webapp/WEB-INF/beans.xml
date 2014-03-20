@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+       http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <import resource="classpath:META-INF/cxf/cxf.xml"/>
+
+    <context:component-scan base-package="com.sap.research.fiware.ngsi10.test"/>
+
+    <jaxrs:server id="restContainer" address="/">
+        <jaxrs:serviceBeans>
+            <!--
+                Root Resource
+             -->
+            <ref bean="rootResource"/>
+            <!--
+                Convenience Operations
+             -->
+            <ref bean="contextEntities"/>
+            <ref bean="contextEntityTypes"/>
+            <ref bean="contextSubscriptions"/>
+            <!--
+                Standard Operations
+             -->
+            <ref bean="queryContext"/>
+            <ref bean="subscribeContext"/>
+            <ref bean="updateContextSubscription"/>
+            <ref bean="unsubscribeContext"/>
+            <ref bean="updateContext"/>
+        </jaxrs:serviceBeans>
+    </jaxrs:server>
+</beans>
